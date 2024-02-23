@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace OracleEFTools;
 
-internal class Procedure<TParams>
+public class Procedure<TParams>
 {
     private readonly List<(string,DbParameter)> _parameters = new();
 
