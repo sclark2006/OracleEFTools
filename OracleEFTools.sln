@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleEFTools", "OracleEFTools\OracleEFTools.csproj", "{F6EEF741-A902-4742-803F-68789C2C7926}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{89FC8DB8-4389-4646-B451-087D3B06DB8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6EEF741-A902-4742-803F-68789C2C7926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6EEF741-A902-4742-803F-68789C2C7926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6EEF741-A902-4742-803F-68789C2C7926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6EEF741-A902-4742-803F-68789C2C7926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89FC8DB8-4389-4646-B451-087D3B06DB8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89FC8DB8-4389-4646-B451-087D3B06DB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89FC8DB8-4389-4646-B451-087D3B06DB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89FC8DB8-4389-4646-B451-087D3B06DB8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95652B3B-FC53-4E80-810C-8D3E4FCF6A06}
+	EndGlobalSection
+EndGlobal
