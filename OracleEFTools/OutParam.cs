@@ -1,7 +1,6 @@
-﻿namespace OracleEFTools
+﻿namespace OracleEFTools;
+
+public class OutParam
 {
-    public class OutParam
-    {
-        public object? Value { get; internal set; }
-    }
+    public object? Value { get; internal set; }
 }

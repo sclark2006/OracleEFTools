@@ -5,7 +5,6 @@ using System.Data.Common;
 
 namespace OracleEFTools;
 
-//[DbConfigurationType(typeof(OracleDbConfiguration))]
 public abstract class OracleDbContext : DbContext
 {
     public OracleDbContext()
