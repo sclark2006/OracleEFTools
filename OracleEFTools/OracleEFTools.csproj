@@ -4,7 +4,34 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>OracleEFTools is a .NET library designed to simplify access to Oracle stored procedures from Entity Framework Core (EF Core).</Title>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <AnalysisLevel>6.0-minimum</AnalysisLevel>
+    <RepositoryUrl>https://github.com/sclark2006/OracleEFTools</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Oracle EFCore ORM StoredProcedures Database</PackageTags>
+    <Description>OracleEFTools is a .NET library designed to simplify access to Oracle stored procedures from Entity Framework Core (EF Core). This tool provides a streamlined way to interact with Oracle databases, making it easier to work with complex stored procedures and integrate them into your EF Core workflow.
+
+Features
+Simplify the process of calling Oracle stored procedures from your EF Core application.
+Automatically handles input and output parameters.
+Fully supports asynchronous operations.</Description>
+    <PackageProjectUrl>https://github.com/sclark2006/OracleEFTools</PackageProjectUrl>
+    <PackageReleaseNotes>First release </PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.27" />
