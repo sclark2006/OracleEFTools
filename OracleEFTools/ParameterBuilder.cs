@@ -39,6 +39,15 @@ public sealed class ParameterBuilder<TParams>
         return this;
     }
 
+    public ParameterBuilder<TParams> In<TCustomObject>() where TCustomObject : INullable, IOracleCustomType, new()
+    {
+        var customObjectType = typeof(TCustomObject);
+        var mappingAttribute = customObjectType.GetCustomAttribute<OracleCustomTypeMappingAttribute>() ??
+            throw new ArgumentException($"The specificied type {customObjectType.Name} doesn't have the {nameof(OracleCustomTypeMappingAttribute)} attribute");
+
+        return In(mappingAttribute.UdtTypeName);
+    }
+
     public ParameterBuilder<TParams> Out(OracleDbType dbType)
     {
         _dbParameter = new OracleParameter(_parameterName ?? _attributeName, dbType, ParameterDirection.Output);
@@ -61,4 +70,11 @@ public sealed class ParameterBuilder<TParams>
 
         return Out(mappingAttribute.UdtTypeName);
     }
+
+    public record OutParam<T>
+    {
+        public T? Value { get; internal set; }
+    }
+
+    public record InOutParam<T>(T? Value);
 }

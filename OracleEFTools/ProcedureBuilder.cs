@@ -15,23 +15,20 @@ public sealed class ProcedureBuilder
     {
         ArgumentNullException.ThrowIfNull(buildAction, nameof(buildAction));
 
-        var procedure = new Procedure<TParams>(_dbContext);
+        var procedure = new Procedure<TParams>();
 
         var procProperties = _dbContext.GetType()
             .GetProperties(BindingFlags.Public | BindingFlags.Instance)
             .Where(x => x.PropertyType == typeof(DBProc<TParams>)).ToList();
 
         if(procProperties.Count == 0)
-            throw new InvalidOperationException($"No se encontró ninguna propiedad de tipo DBProc<{typeof(TParams).Name}>");
+            throw new InvalidOperationException($"No property of type DBProc<{typeof(TParams).Name}> was found");
         if (procProperties.Count > 1)
-            throw new InvalidOperationException("No se puede tener mas de un procedimiento con los mismos parámetros");
+            throw new InvalidOperationException("You cannot have more than one procedure with the same parameters");
 
-         procProperties[0].SetValue(_dbContext, new DBProc<TParams>(buildAction, procedure));
+         procProperties[0].SetValue(_dbContext, new DBProc<TParams>(_dbContext,buildAction, procedure));
 
         _procedureDefinition[$"{procedure.Schema}.{procedure.Name}"] = procedure.Parameters.Select(x => x.Item2);
         return this;
     }
-
-    public IReadOnlyDictionary<string, IEnumerable<DbParameter>> Definitions => _procedureDefinition;
-
 }

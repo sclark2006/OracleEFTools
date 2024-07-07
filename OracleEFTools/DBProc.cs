@@ -4,9 +4,11 @@ public class DBProc<TParams>
 {
     private readonly Action<Procedure<TParams>> _buildProcedureAction;
     private readonly Procedure<TParams> _procedure;
+    private readonly OracleDbContext _dbContext;
 
-    public DBProc(Action<Procedure<TParams>> buildProcedureAction, Procedure<TParams> procedure)
+    internal DBProc(OracleDbContext dbContext, Action<Procedure<TParams>> buildProcedureAction, Procedure<TParams> procedure)
     {
+        _dbContext = dbContext;
         _buildProcedureAction = buildProcedureAction;
         _procedure = procedure;
     }
@@ -14,6 +16,6 @@ public class DBProc<TParams>
     public void Execute(TParams parameters)
     {
         _buildProcedureAction(_procedure);
-        _procedure.Execute(parameters);
+        _dbContext.ExecuteProc(_procedure, parameters);
     }
 }
