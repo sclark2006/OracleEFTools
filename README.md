@@ -162,7 +162,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any questions or suggestions, feel free to contact the maintainer:
 
-- [Your Name](mailto:your.email@example.com)
+- [Frederick Clark](mailto:sclark2006@hotmail.com)
 - [GitHub](https://github.com/sclark2006)
 
 ## Acknowledgements
